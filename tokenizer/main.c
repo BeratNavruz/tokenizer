@@ -1,20 +1,10 @@
-
-/*
-
-İsim : Berat
-Soyisim : Navruz
-Öğrenci Numarası : 02200201026
-Bilgisayar Mühendisliği Örgün Öğretim 2. Sınıf
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main(int argc, char *argv[])
 {
-	/* pc'deki dosyanın yolunu bulan kod kısmı  */
+	/* pc'deki dosyanÄ±n yolunu bulan kod kÄ±smÄ±  */
 	
 	FILE *dosya;
 	char yol[100] = "";
@@ -26,8 +16,8 @@ int main(int argc, char *argv[])
 	char karakter;
 	int i = 1;
 
-	/* dosyayı bulduysa içerisini okuyan kod kısmı
-       dosyayı bulamazsa ise uyarı veriyor */
+	/* dosyayÄ± bulduysa iÃ§erisini okuyan kod kÄ±smÄ±
+       dosyayÄ± bulamazsa ise uyarÄ± veriyor */
 
 	if (dosya != NULL)
 	{
@@ -48,7 +38,7 @@ int main(int argc, char *argv[])
 		printf("Dosya bulunamadi. ");
 	}
 
-	/* burada dosya içerisindeki metni kelimeleştirmeden cmd ekranına yazan kod kısmı */
+	/* burada dosya iÃ§erisindeki metni kelimeleÅŸtirmeden cmd ekranÄ±na yazan kod kÄ±smÄ± */
 	printf("\n");
 	printf("--------------------------------");
 	printf("\n");
@@ -66,7 +56,7 @@ int main(int argc, char *argv[])
 	printf("Dosyadaki metnin kelimelestirilmis hali: ");
 	//printf("\n");
 
-	/* burada dosyadaki metnin space enter ve tab boşluklarını yok etmek amaçlı kaydırma işlemi uygulandı */
+	/* burada dosyadaki metnin space enter ve tab boÅŸluklarÄ±nÄ± yok etmek amaÃ§lÄ± kaydÄ±rma iÅŸlemi uygulandÄ± */
 
 	int k, j, bosluk = 0;
 
@@ -87,7 +77,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	
-	/* kaydırma işleminden sonra ufak tefek boşluk pürüzlerini yok etmek için kelime dizisini boşluk karakterini kontrol ederek kopya dizisine attım  */
+	/* kaydÄ±rma iÅŸleminden sonra ufak tefek boÅŸluk pÃ¼rÃ¼zlerini yok etmek iÃ§in kelime dizisini boÅŸluk karakterini kontrol ederek kopya dizisine attÄ±m  */
 	
 	int diziboyut = 0;
 	for (j = 0; j < i - 1 - bosluk; j++)
@@ -105,14 +95,14 @@ int main(int argc, char *argv[])
 	int l = 0;
 	for (l = 0; l < diziboyut; l++)
 	{
-		/* kod yazarken tanınması gereken bazı karakterleri kodda tanıttım */
+		/* kod yazarken tanÄ±nmasÄ± gereken bazÄ± karakterleri kodda tanÄ±ttÄ±m */
 		
 		if (kopya[l] == 40 || kopya[l] == 41 || kopya[l] == 61 || kopya[l] == 43 || kopya[l] == 45 || kopya[l] == 47 || kopya[l] == 92 ||
 			kopya[l] == 42 || kopya[l] == 123 || kopya[l] == 125 || kopya[l] == 59 || kopya[l] == 58 || kopya[l] == 60 || kopya[l] == 62 ||
 			kopya[l] == 33 || kopya[l] == 63 || kopya[l] == 91 || kopya[l] == 93 || kopya[l] == 94 || kopya[l] == 37 || kopya[l] == 39 ||
 			kopya[l] == 34 || kopya[l] == 46 || kopya[l] == 124 || kopya[l] == 38 || kopya[l] == 44)
 		{
-			/* kelimeleştirirken çıkan pürüzleri düzeltmek için (araya virgül koyma pürüzü) yazdığım kod kısmı */
+			/* kelimeleÅŸtirirken Ã§Ä±kan pÃ¼rÃ¼zleri dÃ¼zeltmek iÃ§in (araya virgÃ¼l koyma pÃ¼rÃ¼zÃ¼) yazdÄ±ÄŸÄ±m kod kÄ±smÄ± */
 			
 			if ((kopya[l] == 40 || kopya[l] == 41 || kopya[l] == 61 || kopya[l] == 43 || kopya[l] == 45 || kopya[l] == 47 || kopya[l] == 92 ||
 				 kopya[l] == 42 || kopya[l] == 123 || kopya[l] == 125 || kopya[l] == 59 || kopya[l] == 58 || kopya[l] == 60 || kopya[l] == 62 ||
@@ -124,7 +114,7 @@ int main(int argc, char *argv[])
 				 kopya[l + 1] == 33 || kopya[l + 1] == 63 || kopya[l + 1] == 91 || kopya[l + 1] == 93 || kopya[l + 1] == 94 || kopya[l + 1] == 37 || kopya[l + 1] == 39 ||
 				 kopya[l + 1] == 34 || kopya[l + 1] == 46 || kopya[l + 1] == 124 || kopya[l + 1] == 38 || kopya[l + 1] == 44))
 			{
-				/* özel durumları (++ , -- gibi) kontrol ettiğim kod kısmı */
+				/* Ã¶zel durumlarÄ± (++ , -- gibi) kontrol ettiÄŸim kod kÄ±smÄ± */
 				
 				if ((kopya[l - 1] == 61 && kopya[l] == 61) || (kopya[l - 1] == 45 && kopya[l] == 45) || (kopya[l - 1] == 43 && kopya[l] == 43) ||
 					(kopya[l - 1] == 62 && kopya[l] == 61) || (kopya[l - 1] == 60 && kopya[l] == 61) || (kopya[l - 1] == 33 && kopya[l] == 61) ||
@@ -139,7 +129,7 @@ int main(int argc, char *argv[])
 					printf(",%c", kopya[l]);
 				}
 			}
-			    /* yukarıdaki pürüzleri düzelttiğim kod kısmına girmemesi durumunda bir daha özel durumu kontrolü yaptım */
+			    /* yukarÄ±daki pÃ¼rÃ¼zleri dÃ¼zelttiÄŸim kod kÄ±smÄ±na girmemesi durumunda bir daha Ã¶zel durumu kontrolÃ¼ yaptÄ±m */
 			
 			else if ((kopya[l - 1] == 61 && kopya[l] == 61) || (kopya[l - 1] == 45 && kopya[l] == 45) || (kopya[l - 1] == 43 && kopya[l] == 43) ||
 					 (kopya[l - 1] == 62 && kopya[l] == 61) || (kopya[l - 1] == 60 && kopya[l] == 61) || (kopya[l - 1] == 33 && kopya[l] == 61) ||
@@ -147,7 +137,7 @@ int main(int argc, char *argv[])
 					 (kopya[l - 1] == 43 && kopya[l] == 61) || (kopya[l - 1] == 45 && kopya[l] == 61) || (kopya[l - 1] == 42 && kopya[l] == 61) ||
 					 (kopya[l - 1] == 47 && kopya[l] == 61) || (kopya[l - 1] == 37 && kopya[l] == 61))
 			{
-				/* kelimeleştirdikten sonraki son kısımda çıkan ufak pürüzleri (virgül sorunu) düzelten kod kısmı */
+				/* kelimeleÅŸtirdikten sonraki son kÄ±sÄ±mda Ã§Ä±kan ufak pÃ¼rÃ¼zleri (virgÃ¼l sorunu) dÃ¼zelten kod kÄ±smÄ± */
 				
 				if (l == diziboyut - 1)
 				{
